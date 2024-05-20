@@ -3,7 +3,7 @@ var raw = 0;
 var m = "100m";
 const params = new URLSearchParams(window.location.search);
 var id = params.get("id") || "UClOyuxZvQkoHoIn15kNbkUw";
-var url = "https://api-v2.nextcounts.com/api/youtube/channel/";
+var url = "https://nia-statistics.com/api/get?platform=youtube&type=channel&id=";
 function spl(n) {
 	n = "" + n + "";
 	return n.split("", 9);
@@ -275,13 +275,13 @@ function getdata(a) {
 	fetch(url + a)
 		.then((res) => res.json())
 		.then((data) => {
-			cmm = spl(data.subcount);
-			raw = data.subcount;
-			document.getElementById("avatar").src = data.userImg;
-			document.getElementById("title").textContent = data.username;
+			cmm = spl(data.estSubCount);
+			raw = data.estSubCount;
+			document.getElementById("avatar").src = data.snippet.thumbnails[2].url;
+			document.getElementById("title").textContent = data.snippet.title;
 			if (chart.series[0].points.length >= 3600)
 				chart.series[0].data[0].remove();
-			chart.series[0].addPoint([Date.now(), data.subcount]);
+			chart.series[0].addPoint([Date.now(), data.estSubCount]);
 			return cmm;
 		});
 }
