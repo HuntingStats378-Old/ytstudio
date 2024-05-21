@@ -7,7 +7,7 @@
 
 html {
   --background: #fff;
-  --header-background: #fff;
+  --header-background: rgb(249, 249,249);
   --text-primary: black;
   --text-secondary: #aaa;
   --font-size: 72px;
