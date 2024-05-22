@@ -3,7 +3,7 @@ var raw = 0;
 var m = "100m";
 const params = new URLSearchParams(window.location.search);
 var id = params.get("id") || "UClOyuxZvQkoHoIn15kNbkUw";
-var url = "https://axern.space/api/get?platform=youtube&type=channel&id=";
+var url = "https://nia-statistics.com/api/get?platform=youtube&type=channel&id=";
 function spl(n) {
 	n = "" + n + "";
 	return n.split("", 9);
@@ -277,7 +277,7 @@ function getdata(a) {
 		.then((data) => {
 			cmm = spl(data.estSubCount);
 			raw = data.estSubCount;
-			document.getElementById("avatar").src = data.snippet.thumbnails.high.url;
+			document.getElementById("avatar").src = data.snippet.thumbnails[2].url;
 			document.getElementById("title").textContent = data.snippet.title;
 			if (chart.series[0].points.length >= 3600)
 				chart.series[0].data[0].remove();
