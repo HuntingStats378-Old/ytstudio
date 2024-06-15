@@ -277,7 +277,7 @@ function getdata(a) {
 		.then((data) => {
 			cmm = spl(data.estSubCount);
 			raw = data.estSubCount;
-			document.getElementById("avatar").src = data.snippet.thumbnails[2].url;
+			document.getElementById("avatar").src = data.snippet.thumbnails.high.url;
 			document.getElementById("title").textContent = data.snippet.title;
 			if (chart.series[0].points.length >= 3600)
 				chart.series[0].data[0].remove();
